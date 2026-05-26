@@ -10,12 +10,3 @@ public sealed class FolderSnapshot
 
     public List<string> Directories { get; set; } = [];
 }
-
-public sealed class SnapshotFileEntry
-{
-    public string Path { get; set; } = string.Empty;
-
-    public string Hash { get; set; } = string.Empty;
-
-    public int Version { get; set; }
-}

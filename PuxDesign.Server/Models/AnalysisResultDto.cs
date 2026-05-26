@@ -9,5 +9,3 @@ public sealed record AnalysisResultDto(
     IReadOnlyCollection<FileVersionDto> RemovedFiles,
     IReadOnlyCollection<string> RemovedDirectories,
     IReadOnlyCollection<FileVersionDto> CurrentFiles);
-
-public sealed record FileVersionDto(string Path, int Version);
