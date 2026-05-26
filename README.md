@@ -1,6 +1,11 @@
-Zadání:
+# PuxDesign - detekce změn v adresáři
+
+Testovací úloha pro firmu PuxDesign na pozici web developera.
+
+## Zadání
 
 CVIČNÝ ÚKOL - Hledáme šikovného web developera!
+
 Napište jednoduchý program, který bude umět detekovat změny v lokálním adresáři uvedeném na
 vstupu. Při prvním spuštění si program obsah daného adresáře analyzuje a při každém dalším
 spuštění bude hlásit změny od svého posledního spuštění, tj:
@@ -19,3 +24,32 @@ UI bude obsahovat alespoň textbox (textový input) pro zadání cesty k analyzo
 tlačítko pro spuštění analýzy a výpis jejího výsledku.
 Své řešení stručně popište a zmiňte i jeho případná omezení.
 
+## Moje řešení
+
+Řešení je postavené na **.NET 8** jako **ASP.NET Core Web API** a frontend je vytvořený v **Reactu**.
+
+Frontend komunikuje s backendem přes **REST API** a pro jednoduché UI jsem použil **Bootstrap**.
+
+Data se neukládají do databáze. Stav analyzovaných adresářů se ukládá do **JSON souborů**.
+
+Aplikace umí pracovat s více složkami. Již analyzované složky se zobrazují v UI a lze je znovu načíst.
+
+Změna obsahu souboru se detekuje pomocí **SHA-256 hashe**. Verze souboru se navýší pouze tehdy, když se změní jeho obsah.
+
+Umístění JSON snapshotů je nastavitelné v `appsettings.json`.
+
+## Spuštění
+
+Backend:
+
+```powershell
+dotnet run --project PuxDesign.Server
+````
+
+Frontend:
+
+```powershell
+cd puxdesign.client
+npm install
+npm run dev
+```
