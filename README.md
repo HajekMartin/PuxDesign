@@ -24,6 +24,8 @@ UI bude obsahovat alespoň textbox (textový input) pro zadání cesty k analyzo
 tlačítko pro spuštění analýzy a výpis jejího výsledku.
 Své řešení stručně popište a zmiňte i jeho případná omezení.
 
+[Zadání v PDF](./zadani.pdf)
+	 
 ## Moje řešení
 
 Řešení je postavené na **.NET 8** jako **ASP.NET Core Web API** a frontend je vytvořený v **Reactu**.
