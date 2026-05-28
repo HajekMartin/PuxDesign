@@ -237,13 +237,13 @@ public sealed class FolderAnalysisService : IFolderAnalysisService
     {
         if (string.IsNullOrWhiteSpace(path))
         {
-            throw new FolderAnalysisException("Cesta k adres√°≈ôi je povinn√°.");
+            throw new FolderAnalysisException("Cesta k adres·¯i je povinn·.");
         }
 
         var fullPath = Path.GetFullPath(Environment.ExpandEnvironmentVariables(path.Trim()));
         if (!Directory.Exists(fullPath))
         {
-            throw new FolderAnalysisException($"Adres√°≈ô '{fullPath}' neexistuje.");
+            throw new FolderAnalysisException($"Adres·¯ '{fullPath}' neexistuje.");
         }
 
         return fullPath.TrimEnd(Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar);
