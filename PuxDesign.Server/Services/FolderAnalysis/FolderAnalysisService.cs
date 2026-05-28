@@ -1,21 +1,14 @@
+using Microsoft.Extensions.Options;
+using PuxDesign.Server.Models;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.Json;
-using Microsoft.Extensions.Options;
-using PuxDesign.Server.Models;
 
-namespace PuxDesign.Server.Services;
-
-public interface IFolderAnalysisService
-{
-    Task<IReadOnlyCollection<AnalyzedFolderDto>> GetAnalyzedFoldersAsync(CancellationToken cancellationToken);
-
-    Task<AnalysisResultDto> AnalyzeAsync(string path, CancellationToken cancellationToken);
-}
+namespace PuxDesign.Server.Services.FolderAnalysis;
 
 public sealed class FolderAnalysisService : IFolderAnalysisService
 {
-    private const long MaxFileSizeBytes = 50L * 1024L * 1024L;
+    private const long MaxFileSizeBytes = 52_428_800L;
     private const int MaxFilesPerDirectory = 100;
 
     private static readonly JsonSerializerOptions JsonOptions = new(JsonSerializerDefaults.Web)
